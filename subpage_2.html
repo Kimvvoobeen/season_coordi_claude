@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>코디 상세 — SEASON COORDI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="sub2">
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">SEASON<span>COORDI</span></a>
+    <nav class="nav">
+      <a href="index.html">홈</a>
+      <a href="subpage_1.html" class="active">코디 추천</a>
+      <a href="subpage_1.html">스타일북</a>
+      <a href="#" onclick="return false;">마이페이지</a>
+    </nav>
+    <div class="header-actions">
+      <div class="auth-guest" style="display:flex;align-items:center;gap:8px;">
+        <button class="btn-login" data-open-modal="loginModal">로그인</button>
+        <button class="btn-signup" data-open-modal="signupModal">회원가입</button>
+      </div>
+      <div class="auth-user" style="display:none;align-items:center;gap:8px;">
+        <button class="user-name-btn auth-username">사용자</button>
+        <button class="btn-logout">로그아웃</button>
+      </div>
+      <button class="btn-icon" title="좋아요 목록">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </button>
+      <button class="btn-icon" title="검색">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MAIN ============ -->
+<main style="padding: 36px 0 80px;">
+  <div class="container">
+
+    <!-- Breadcrumb + Back -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;">
+      <div class="breadcrumb" style="margin-bottom:0;">
+        <a href="index.html">🏠 홈</a>
+        <span class="sep">›</span>
+        <a href="subpage_1.html">코디 추천</a>
+        <span class="sep">›</span>
+        <span>코디 상세</span>
+      </div>
+      <button class="back-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        목록으로 돌아가기
+      </button>
+    </div>
+
+    <!-- Detail Layout -->
+    <div class="detail-layout">
+
+      <!-- Gallery (Left) -->
+      <div class="detail-gallery">
+        <div class="detail-main-img">
+          <img id="detailMainImg" src="" alt="코디 이미지"
+               onerror="this.src='https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=600&q=80'">
+          <button class="detail-expand" title="크게 보기" onclick="expandImage()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+            </svg>
+          </button>
+        </div>
+        <div class="detail-thumbnails" id="detailThumbs"></div>
+      </div>
+
+      <!-- Info (Right) -->
+      <div class="detail-info">
+        <div class="detail-tags" id="detailTags"></div>
+        <h1 class="detail-title" id="detailTitle">—</h1>
+        <p class="detail-subdesc" id="detailDesc">—</p>
+
+        <div class="detail-meta-grid">
+          <div class="detail-meta-item">
+            <span class="detail-meta-icon">🌡️</span>
+            <div>
+              <div class="detail-meta-label">추천 기온</div>
+              <div class="detail-meta-value" id="detailTemp">—</div>
+            </div>
+          </div>
+          <div class="detail-meta-item">
+            <span class="detail-meta-icon">🌸</span>
+            <div>
+              <div class="detail-meta-label">추천 계절</div>
+              <div class="detail-meta-value" id="detailSeason">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-hashtags">
+          <div class="detail-hashtag-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/>
+            </svg>
+            스타일 태그
+          </div>
+          <div class="detail-hashtag-list" id="detailHashtags"></div>
+        </div>
+
+        <div class="detail-point-box">
+          <div class="detail-point-label">
+            <span>💡</span> 코디 포인트
+          </div>
+          <p class="detail-point-text" id="detailPoint">—</p>
+        </div>
+
+        <div class="detail-actions">
+          <button class="btn-like-detail" id="detailLikeBtn" title="좋아요">♡</button>
+          <button class="btn-primary" style="flex:1;" onclick="saveToStylebook()">스타일북에 저장</button>
+          <button class="btn-outline" onclick="shareOutfit()">공유</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Items -->
+    <div class="items-section">
+      <h2 class="items-section-title">아이템 구성</h2>
+      <div class="items-grid" id="itemsGrid">
+        <div class="item-card">
+          <div class="item-img skeleton" style="aspect-ratio:1;border-radius:12px;"></div>
+          <div class="skeleton skeleton-text" style="margin-top:10px;width:60%;"></div>
+        </div>
+        <div class="item-card">
+          <div class="item-img skeleton" style="aspect-ratio:1;border-radius:12px;"></div>
+          <div class="skeleton skeleton-text" style="margin-top:10px;width:60%;"></div>
+        </div>
+        <div class="item-card">
+          <div class="item-img skeleton" style="aspect-ratio:1;border-radius:12px;"></div>
+          <div class="skeleton skeleton-text" style="margin-top:10px;width:60%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related / Similar -->
+    <div class="related-row">
+      <div class="related-block">
+        <div class="related-header">
+          <h2 class="related-title">이 코디와 어울리는 코디</h2>
+          <a href="subpage_1.html" class="related-more">더보기 →</a>
+        </div>
+        <div class="related-grid" id="relatedGrid">
+          <div><div class="skeleton skeleton-card" style="border-radius:8px;"></div></div>
+          <div><div class="skeleton skeleton-card" style="border-radius:8px;"></div></div>
+          <div><div class="skeleton skeleton-card" style="border-radius:8px;"></div></div>
+        </div>
+      </div>
+      <div class="related-block">
+        <div class="related-header">
+          <h2 class="related-title">비슷한 스타일 코디</h2>
+          <a href="subpage_1.html" class="related-more">더보기 →</a>
+        </div>
+        <div class="related-grid" id="similarGrid">
+          <div><div class="skeleton skeleton-card" style="border-radius:8px;"></div></div>
+          <div><div class="skeleton skeleton-card" style="border-radius:8px;"></div></div>
+          <div><div class="skeleton skeleton-card" style="border-radius:8px;"></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Image Lightbox -->
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:2000;align-items:center;justify-content:center;cursor:pointer;" onclick="closeLightbox()">
+  <img id="lightboxImg" src="" alt="" style="max-height:90vh;max-width:90vw;border-radius:8px;object-fit:contain;">
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" style="margin-top:0">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">SEASON<span>COORDI</span></div>
+        <div class="footer-tagline">계절에 맞는 나만의 코디를 추천해드려요.</div>
+      </div>
+      <div class="footer-links">
+        <a href="#">소개</a>
+        <a href="#">이용약관</a>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">문의하기</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" title="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="#" title="카카오">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 3C7.03 3 3 6.36 3 10.5c0 2.64 1.73 4.96 4.36 6.29l-.98 3.66 4.3-2.84c.42.06.85.09 1.32.09 4.97 0 9-3.36 9-7.5S16.97 3 12 3z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2024 SEASON COORDI. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ============ LOGIN MODAL ============ -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <button class="modal-close" data-close-modal="loginModal">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6 6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <h2>로그인</h2>
+    <p class="sub">SEASON COORDI에 오신 것을 환영해요.</p>
+    <div class="modal-error"></div>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="loginEmail">이메일</label>
+        <input type="email" id="loginEmail" placeholder="이메일을 입력하세요" required>
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">비밀번호</label>
+        <input type="password" id="loginPassword" placeholder="비밀번호를 입력하세요" required>
+      </div>
+      <button type="submit" class="form-btn">로그인</button>
+    </form>
+    <div class="modal-switch">
+      아직 계정이 없으신가요?
+      <a data-switch-modal="loginModal:signupModal">회원가입</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SIGNUP MODAL ============ -->
+<div class="modal-overlay" id="signupModal">
+  <div class="modal">
+    <button class="modal-close" data-close-modal="signupModal">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6 6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <h2>회원가입</h2>
+    <p class="sub">나만의 스타일을 찾아보세요.</p>
+    <div class="modal-error"></div>
+    <div class="modal-success">회원가입이 완료되었습니다! 🎉</div>
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="signupEmail">이메일</label>
+        <input type="email" id="signupEmail" placeholder="이메일을 입력하세요" required>
+      </div>
+      <div class="form-group">
+        <label for="signupPassword">비밀번호</label>
+        <input type="password" id="signupPassword" placeholder="비밀번호 6자 이상" required minlength="6">
+      </div>
+      <button type="submit" class="form-btn">회원가입</button>
+    </form>
+    <div class="modal-switch">
+      이미 계정이 있으신가요?
+      <a data-switch-modal="signupModal:loginModal">로그인</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+function expandImage() {
+  const src = document.getElementById('detailMainImg').src;
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightboxImg').src = src;
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function saveToStylebook() {
+  const saved = localStorage.getItem('sc_demo_user');
+  if (!saved) {
+    alert('스타일북 저장은 로그인 후 이용 가능합니다.');
+    openModal('loginModal');
+    return;
+  }
+  alert('스타일북에 저장되었습니다! ❤️');
+}
+function shareOutfit() {
+  if (navigator.share) {
+    navigator.share({ title: 'SEASON COORDI', text: '이 코디 어때요?', url: window.location.href })
+      .catch(() => {});
+  } else {
+    navigator.clipboard?.writeText(window.location.href).then(() => alert('링크가 복사되었습니다!'));
+  }
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+</body>
+</html>

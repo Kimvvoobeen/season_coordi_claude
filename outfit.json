@@ -1,0 +1,158 @@
+{
+  "outfits": [
+    {
+      "id": 1,
+      "title": "미니멀 데일리룩",
+      "description": "선선한 날씨에 입기 좋은 깔끔한 미니멀 스타일",
+      "style": ["캐주얼", "미니멀"],
+      "gender": "남성",
+      "tempMin": 14,
+      "tempMax": 18,
+      "season": ["봄", "가을"],
+      "tags": ["#미니멀", "#데일리", "#심플", "#데이트룩"],
+      "image": "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&q=80",
+        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&q=80",
+        "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=600&q=80",
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+      ],
+      "point": "톤온톤 컬러 매치로 깔끔함을 살리고, 여유 있는 실루엣으로 편안하면서도 세련된 무드를 연출했어요.",
+      "items": [
+        { "category": "OUTER", "name": "미니멀 하이백 자켓", "color": "라이트 그레이", "colorHex": "#c8c8c8" },
+        { "category": "TOP", "name": "기본 라운드 니트", "color": "블랙", "colorHex": "#1a1a1a" },
+        { "category": "BOTTOM", "name": "와이드 슬랙스 팬츠", "color": "차콜", "colorHex": "#3d3d3d" },
+        { "category": "SHOES", "name": "클래식 스니커즈", "color": "화이트", "colorHex": "#f5f5f5" },
+        { "category": "BAG", "name": "미니멀 크로스백", "color": "블랙", "colorHex": "#1a1a1a" }
+      ],
+      "relatedIds": [2, 3, 4],
+      "similarIds": [5, 6, 2]
+    },
+    {
+      "id": 2,
+      "title": "데일리 캐주얼룩",
+      "description": "편안하면서도 깔끔한 데일리룩",
+      "style": ["캐주얼"],
+      "gender": "남성",
+      "tempMin": 14,
+      "tempMax": 18,
+      "season": ["봄", "가을"],
+      "tags": ["#캐주얼", "#데일리", "#편안함"],
+      "image": "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=600&q=80"
+      ],
+      "point": "편안한 핏의 캐주얼 아이템으로 일상에서 쉽게 소화할 수 있는 룩이에요.",
+      "items": [
+        { "category": "TOP", "name": "오버핏 맨투맨", "color": "그레이", "colorHex": "#9e9e9e" },
+        { "category": "BOTTOM", "name": "조거 팬츠", "color": "블랙", "colorHex": "#1a1a1a" },
+        { "category": "SHOES", "name": "러닝화", "color": "화이트", "colorHex": "#f5f5f5" }
+      ],
+      "relatedIds": [1, 3, 5],
+      "similarIds": [1, 3, 4]
+    },
+    {
+      "id": 3,
+      "title": "미니멀 롱코트룩",
+      "description": "심플한 컬러 조합의 미니멀룩",
+      "style": ["미니멀"],
+      "gender": "여성",
+      "tempMin": 15,
+      "tempMax": 19,
+      "season": ["봄", "가을"],
+      "tags": ["#미니멀", "#롱코트", "#심플"],
+      "image": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600&q=80"
+      ],
+      "point": "롱코트로 우아함을 더하고 이너는 심플하게 매치해 세련된 미니멀 룩을 완성했어요.",
+      "items": [
+        { "category": "OUTER", "name": "오버핏 롱코트", "color": "아이보리", "colorHex": "#f0ede4" },
+        { "category": "TOP", "name": "베이직 티셔츠", "color": "화이트", "colorHex": "#f5f5f5" },
+        { "category": "BOTTOM", "name": "슬림 슬랙스", "color": "블랙", "colorHex": "#1a1a1a" },
+        { "category": "SHOES", "name": "로퍼", "color": "블랙", "colorHex": "#1a1a1a" }
+      ],
+      "relatedIds": [1, 4, 6],
+      "similarIds": [1, 5, 6]
+    },
+    {
+      "id": 4,
+      "title": "스트릿 후드룩",
+      "description": "힙하면서 편안한 스트릿 코디",
+      "style": ["스트릿"],
+      "gender": "공용",
+      "tempMin": 13,
+      "tempMax": 17,
+      "season": ["봄", "가을"],
+      "tags": ["#스트릿", "#후드", "#힙"],
+      "image": "https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&q=80"
+      ],
+      "point": "후드집업과 와이드 팬츠의 조합으로 힙하면서도 편안한 스트릿 룩을 완성했어요.",
+      "items": [
+        { "category": "TOP", "name": "오버핏 후드집업", "color": "차콜", "colorHex": "#3d3d3d" },
+        { "category": "BOTTOM", "name": "배기 데님", "color": "인디고", "colorHex": "#3b4d6e" },
+        { "category": "SHOES", "name": "하이탑 스니커즈", "color": "화이트", "colorHex": "#f5f5f5" },
+        { "category": "ACC", "name": "볼캡", "color": "블랙", "colorHex": "#1a1a1a" }
+      ],
+      "relatedIds": [2, 5, 6],
+      "similarIds": [2, 5, 1]
+    },
+    {
+      "id": 5,
+      "title": "여친룩 데일리 코디",
+      "description": "꾸민 듯 안 꾸민 듯 자연스러운 룩",
+      "style": ["꾸안꾸"],
+      "gender": "여성",
+      "tempMin": 15,
+      "tempMax": 20,
+      "season": ["봄", "가을"],
+      "tags": ["#꾸안꾸", "#여친룩", "#자연스러움"],
+      "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80"
+      ],
+      "point": "자연스럽고 편안한 핏으로 꾸민 듯 안 꾼 듯한 매력적인 여친룩을 연출했어요.",
+      "items": [
+        { "category": "TOP", "name": "니트 가디건", "color": "베이지", "colorHex": "#d4c5a9" },
+        { "category": "BOTTOM", "name": "와이드 데님", "color": "라이트 블루", "colorHex": "#7da7d9" },
+        { "category": "SHOES", "name": "플랫슈즈", "color": "베이지", "colorHex": "#d4c5a9" },
+        { "category": "BAG", "name": "토트백", "color": "화이트", "colorHex": "#f5f5f5" }
+      ],
+      "relatedIds": [3, 6, 1],
+      "similarIds": [3, 6, 1]
+    },
+    {
+      "id": 6,
+      "title": "레더 자켓룩",
+      "description": "시크한 무드의 레더 자켓 코디",
+      "style": ["스트릿"],
+      "gender": "여성",
+      "tempMin": 13,
+      "tempMax": 17,
+      "season": ["봄", "가을"],
+      "tags": ["#레더", "#시크", "#스트릿"],
+      "image": "https://images.unsplash.com/photo-1548369938-3b5b7ceb55e3?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1548369938-3b5b7ceb55e3?w=600&q=80"
+      ],
+      "point": "레더 자켓으로 시크한 무드를 연출하고, 미디 스커트로 여성스러움을 더했어요.",
+      "items": [
+        { "category": "OUTER", "name": "크롭 레더 자켓", "color": "블랙", "colorHex": "#1a1a1a" },
+        { "category": "TOP", "name": "베이직 티셔츠", "color": "화이트", "colorHex": "#f5f5f5" },
+        { "category": "BOTTOM", "name": "미디 플리츠 스커트", "color": "블랙", "colorHex": "#1a1a1a" },
+        { "category": "SHOES", "name": "앵클부츠", "color": "블랙", "colorHex": "#1a1a1a" },
+        { "category": "BAG", "name": "미니 숄더백", "color": "블랙", "colorHex": "#1a1a1a" }
+      ],
+      "relatedIds": [4, 5, 2],
+      "similarIds": [4, 5, 3]
+    }
+  ],
+  "preview": [
+    { "id": 1, "season": "겨울", "title": "포근한 겨울 데일리룩", "tags": ["#겨울", "#데일리", "#따뜻한"], "image": "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=400&q=80" },
+    { "id": 2, "season": "봄", "title": "봄의 캐주얼룩", "tags": ["#봄", "#캐주얼", "#산뜻한"], "image": "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=400&q=80" },
+    { "id": 3, "season": "여름", "title": "여름의 미니멀룩", "tags": ["#여름", "#미니멀", "#시원한"], "image": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=400&q=80" },
+    { "id": 4, "season": "가을", "title": "가을의 꾸안꾸룩", "tags": ["#가을", "#꾸안꾸", "#분위기"], "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80" }
+  ]
+}
